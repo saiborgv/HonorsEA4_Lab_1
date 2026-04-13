@@ -1,7 +1,8 @@
 function [t, y] = rk4step(rhs, t_in, y_in, opt)
     %This function uses the rk4step method to approximate the differential
-    %equation. The parameter "rhs" is a function call which evaluates the
-    %differential equation.
+    %equation. The parameter "rhs" is a function call which helps the rk4
+    %method evaluate the differential equation, by solving the right hand
+    %side.
     
     h = opt.timestep; % Time step size
     k1 = h * rhs(t_in, y_in);
